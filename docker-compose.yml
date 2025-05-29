@@ -3,14 +3,14 @@ services:
   nest-backend:
     build: .
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: "postgresql://postgres:postgres@example123:5432/portfolio_db"
+      DATABASE_URL: 'postgresql://postgres:example123@postgres:5432/portfolio_db'
     command: npm run start:dev
 
   postgres:
@@ -21,7 +21,7 @@ services:
       POSTGRES_PASSWORD: example123
       POSTGRES_DB: portfolio_db
     ports:
-      - "5432:5432"
+      - '5433:5432'
     volumes:
       - pgdata:/var/lib/postgresql/data
 
